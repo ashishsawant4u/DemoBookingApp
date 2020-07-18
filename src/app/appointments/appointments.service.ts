@@ -1,30 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AppointmentData } from './appointment.data';
-
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
     providedIn:"root"
 })
 export class AppointmentsService
 {
-    getAllAppointments(): AppointmentData[]
+    httpService : HttpClient;
+
+    constructor(httpService : HttpClient)
     {
-        return [
-            {
-              appointmentNumber:"324242344",
-              appointmentDate:new Date("12-12-2020"),
-              productNumber:"AC3380",
-              customerName:"Md Bin Zayd",
-              address:"15 Park Avenu,Aukland,NZ,2025",
-              custMobNo:"9870123456"
-            },
-            {
-              appointmentNumber:"545345354",
-              appointmentDate:new Date("25-12-2020"),
-              productNumber:"AC33820",
-              customerName:"Md Paul J",
-              address:"Midtown Park,Aukland,NZ,2027",
-              custMobNo:"9870123456"
-            }
-        ]
+        this.httpService = httpService;
+    }
+
+    getAllAppointments(): Observable<AppointmentData[]>
+    {
+        return this.httpService.get<AppointmentData[]>("https://run.mocky.io/v3/a13cc79e-b6f1-4491-9be9-3d3449199060");
     }
 }
