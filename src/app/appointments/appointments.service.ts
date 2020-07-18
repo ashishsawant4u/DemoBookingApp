@@ -32,8 +32,13 @@ export class AppointmentsService
 
     getAllAppointments(): Observable<AppointmentData[]>
     {
-        return this.httpService.get<AppointmentData[]>("https://run.mocky.io/v3/b620c714-9776-43e1-9728-c42afb9b656eX")
+        return this.httpService.get<AppointmentData[]>("https://run.mocky.io/v3/b620c714-9776-43e1-9728-c42afb9b656e")
             .pipe(
+                tap(app => {
+                    app.forEach(function(item){
+                        item.appointmentNumber = "APP"+item.appointmentNumber;
+                      })
+                }),
                 catchError(this.appointmentsServiceExceptionHandler)
             );
     }
