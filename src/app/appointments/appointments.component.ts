@@ -10,6 +10,7 @@ export class AppointmentsComponent implements OnInit
 {
     appointmentList : AppointmentData [] ;
     appointmentsService : AppointmentsService;
+    errorMsg : String;
 
     constructor(appointmentsService : AppointmentsService)
     {
@@ -26,6 +27,7 @@ export class AppointmentsComponent implements OnInit
             },
             error:resp =>
             {
+                this.errorMsg = resp;
                 console.log('getAllAppointmentsObserver/error ...'+resp);    
             },
             complete: () =>

@@ -1,4 +1,13 @@
-<table class="table table-bordered table-hover">
+
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errorMsg">
+     {{errorMsg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<table class="table table-bordered table-hover"  *ngIf="appointmentList">
     <thead class="bg-warning">
       <tr>
         <th scope="col">Appointment No.</th>
