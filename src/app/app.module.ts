@@ -5,11 +5,14 @@ import { RouterModule }  from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
+import { AppointmentDetailsComponent } from './appointments/appointmentdetails.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppointmentsComponent
+    AppointmentsComponent,
+    AppointmentDetailsComponent
   ],
   imports: [
     BrowserModule,
