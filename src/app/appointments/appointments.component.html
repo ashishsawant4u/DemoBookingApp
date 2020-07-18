@@ -1,1 +1,20 @@
-{{test}}
+<table class="table table-bordered table-hover">
+    <thead class="bg-warning">
+      <tr>
+        <th scope="col">Appointment No.</th>
+        <th scope="col">Date</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Contact No</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apps of appointmentList">
+        <th scope="row">{{apps.appointmentNumber}}</th>
+        <td>{{apps.date | date: 'dd-MMM-yyyy' }}</td>
+        <td>{{apps.customerName}}</td>
+        <td>{{apps.custMobNo}}</td>
+        <td>{{apps.address}}</td>
+      </tr>
+    </tbody>
+  </table>
