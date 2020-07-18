@@ -18,21 +18,24 @@ export class AppointmentsComponent implements OnInit
 
     ngOnInit(): void {
         
-        this.appointmentsService.getAllAppointments()
-            .subscribe({
-                next:resp =>
-                {
-                    this.appointmentList = <AppointmentData[]>resp;
-                    console.log('getAllAppointmentsObserver/next ...'+resp);    
-                },
-                error:resp =>
-                {
-                    console.log('getAllAppointmentsObserver/error ...'+resp);    
-                },
-                complete: () =>
-                {
-                    console.log('getAllAppointmentsObserver/complete');  
-                }
-        });
+        let getAllAppointmentsObserver = {
+            next:resp =>
+            {
+                this.appointmentList = <AppointmentData[]>resp;
+                console.log('getAllAppointmentsObserver/next ...'+resp);    
+            },
+            error:resp =>
+            {
+                console.log('getAllAppointmentsObserver/error ...'+resp);    
+            },
+            complete: () =>
+            {
+                console.log('getAllAppointmentsObserver/complete');  
+            }
+    }
+        
+    
+    this.appointmentsService.getAllAppointments()
+            .subscribe(getAllAppointmentsObserver);
     }
 }
