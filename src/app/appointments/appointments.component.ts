@@ -10,6 +10,7 @@ export class AppointmentsComponent implements OnInit
 {
     appointmentList : AppointmentData [] ;
     appointmentsService : AppointmentsService;
+    appointmentsCount : number;
     errorMsg : String;
 
     constructor(appointmentsService : AppointmentsService)
@@ -39,5 +40,16 @@ export class AppointmentsComponent implements OnInit
     
     this.appointmentsService.getAllAppointments()
             .subscribe(getAllAppointmentsObserver);
+
+
+    this.appointmentsService.getAppointmentsCount()
+    .subscribe({
+        next:resp =>{
+            this.appointmentsCount = resp;
+        }
+    });    
+
     }
+
+    
 }

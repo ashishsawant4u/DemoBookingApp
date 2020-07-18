@@ -43,5 +43,14 @@ export class AppointmentsService
             );
     }
 
+    getAppointmentsCount(): Observable<number>
+    {
+        return this.httpService.get("https://run.mocky.io/v3/b620c714-9776-43e1-9728-c42afb9b656e")
+            .pipe(
+                map((response: AppointmentData[]) => response.length),
+                catchError(this.appointmentsServiceExceptionHandler)
+            );
+    }
+
     
 }
