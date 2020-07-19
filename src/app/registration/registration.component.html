@@ -1,15 +1,28 @@
 <form #appointmentFormRef="ngForm">
+    
+    <div class="form-group row">
+        <label for="appointmentNumber" class="col-sm-2 col-form-label font-weight-bold">Appointment Number</label>
+        <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext font-weight-bold" id="appointmentNumber" name="appointmentNumber" [(ngModel)]="appointmentForm.appointmentNumber">
+        </div>    
+    </div>
     <div class="form-group">
       <label for="customerName">Full Name</label>
-      <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="appointmentForm.customerName">
+      <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="appointmentForm.customerName"
+        required #customerNameModel="ngModel">
+        <span class="text-danger" [hidden]="customerNameModel.valid || customerNameModel.untouched">Please Enter Name</span>  
     </div>
     <div class="form-group">
       <label for="customerMob">Mobile Number</label>
-      <input type="text" class="form-control" id="customerMob" name="custMobNo" [(ngModel)]="appointmentForm.custMobNo">
+      <input type="text" class="form-control" id="customerMob" name="custMobNo" [(ngModel)]="appointmentForm.custMobNo"
+        required #mobNumModel="ngModel">
+      <span class="text-danger" [hidden]="mobNumModel.valid || mobNumModel.untouched">Please Enter Mobile Number</span>  
     </div>
     <div class="form-group">
         <label for="custAddress">Address</label>
-        <textarea class="form-control" id="custAddress" rows="3" name="address" [(ngModel)]="appointmentForm.address"></textarea>
+        <textarea class="form-control" id="custAddress" rows="3" name="address" [(ngModel)]="appointmentForm.address"
+        required #addressModel="ngModel"></textarea>
+        <span class="text-danger" [hidden]="addressModel.valid || addressModel.untouched">Please Enter your address</span>  
     </div>
     <div class="form-group">
         <label for="appointmentDate">Date</label>
@@ -24,3 +37,5 @@
   </form>
   
 XXXXXXXXXX {{appointmentFormRef.value  | json }}
+
+
