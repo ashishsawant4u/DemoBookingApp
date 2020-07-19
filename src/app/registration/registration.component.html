@@ -1,25 +1,26 @@
-<form>
+<form #appointmentFormRef="ngForm">
     <div class="form-group">
       <label for="customerName">Full Name</label>
-      <input type="text" class="form-control" id="customerName">
+      <input type="text" class="form-control" id="customerName" name="customerName" [(ngModel)]="appointmentForm.customerName">
     </div>
     <div class="form-group">
       <label for="customerMob">Mobile Number</label>
-      <input type="text" class="form-control" id="customerMob">
+      <input type="text" class="form-control" id="customerMob" name="custMobNo" [(ngModel)]="appointmentForm.custMobNo">
     </div>
     <div class="form-group">
         <label for="custAddress">Address</label>
-        <textarea class="form-control" id="custAddress" rows="3"></textarea>
+        <textarea class="form-control" id="custAddress" rows="3" name="address" [(ngModel)]="appointmentForm.address"></textarea>
     </div>
     <div class="form-group">
         <label for="appointmentDate">Date</label>
-        <input type="text" class="form-control" id="appointmentDate">
+        <input type="text" class="form-control" id="appointmentDate" name="appointmentDate" [(ngModel)]="appointmentForm.appointmentDate">
     </div>
     <div class="form-group">
         <label for="productNumber">Product</label>
-        <input type="text" class="form-control" id="productNumber">
+        <input type="text" class="form-control" id="productNumber" name="productNumber" [(ngModel)]="appointmentForm.productNumber">
     </div>
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   
+XXXXXXXXXX {{appointmentFormRef.value  | json }}
