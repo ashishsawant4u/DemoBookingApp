@@ -1,0 +1,43 @@
+<img [src]="productDetails.imageUrl" class="h-50"
+onerror="this.onerror=null; this.src='/assets/images/products/demoimg.png'"/>
+
+
+<div [style.display]="showProductModel ? 'block' : 'none'" class="modal fade show" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+            
+          <table class="table table-striped ">
+            <tbody>
+              <tr>
+                <td>
+                  <img [src]="productDetails.imageUrl" class="h-50"
+                    onerror="this.onerror=null; this.src='/assets/images/products/demoimg.png'"/>
+                </td>
+                <td>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{productDetails.productNumber}}</li>
+                    <li class="list-group-item"><b>{{productDetails.name}}</b></li>
+                    <li class="list-group-item">{{productDetails.description}}</li>
+                    <li class="list-group-item">{{productDetails.price | currency:'$'}}</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="hideProdDetails();">Close</button>
+        </div>
+      </div>
+    </div>
+</div>

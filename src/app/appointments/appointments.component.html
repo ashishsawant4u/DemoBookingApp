@@ -22,7 +22,7 @@
     <tbody>
       <tr *ngFor="let apps of appointmentList">
         <th scope="row">{{apps.appointmentNumber}}</th>
-        <td><appointment-detail [productNumber]="apps.productNumber"></appointment-detail></td>
+        <td (mouseover)="details.showProdDetails()"><appointment-detail [productNumber]="apps.productNumber" #details></appointment-detail></td>
         <td>{{apps.appointmentDate | date: 'dd-MMM-yyyy' }}</td>
         <td>{{apps.customerName}}</td>
         <td>{{apps.custMobNo}}</td>
