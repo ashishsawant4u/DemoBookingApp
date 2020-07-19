@@ -17,11 +17,13 @@ export class RegistrationComponent implements OnInit {
     custMobNo : "",
     productNumber : ""
   };
+ 
 
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
   saveAppointment(appointmentForm : NgForm):void

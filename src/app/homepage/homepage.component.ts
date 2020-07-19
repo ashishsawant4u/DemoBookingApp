@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationData } from '../homepage/auth.data';
 import { NgForm } from '@angular/forms';
 import { Router }  from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';  
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-homepage',
@@ -16,8 +18,9 @@ export class HomepageComponent implements OnInit {
   };
 
   authFailed : boolean;
+ 
 
-  constructor(public routerService : Router) { }
+  constructor(public routerService : Router,private cookieService: CookieService,private appComponent: AppComponent) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +36,10 @@ export class HomepageComponent implements OnInit {
         {
             this.authFailed = false;
 
+            this.appComponent.hasLoggedInUser = true;
+
+            this.cookieService.set('authusername', username);  
+            
             if(username === "admin")
             {
               this.routerService.navigate(["/appointments"]);
