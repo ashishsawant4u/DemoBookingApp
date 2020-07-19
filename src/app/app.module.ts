@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentDetailsComponent } from './appointments/appointmentdetails.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -15,13 +16,15 @@ import { RegistrationComponent } from './registration/registration.component';
     AppComponent,
     AppointmentsComponent,
     AppointmentDetailsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      {path:"", component:HomepageComponent},
       {path:"appointments", component:AppointmentsComponent},
       {path:"booking", component:RegistrationComponent}
     ])
