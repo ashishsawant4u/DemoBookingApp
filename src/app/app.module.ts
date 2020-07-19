@@ -6,19 +6,22 @@ import { RouterModule }  from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentDetailsComponent } from './appointments/appointmentdetails.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentsComponent,
-    AppointmentDetailsComponent
+    AppointmentDetailsComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path:"appointments", component:AppointmentsComponent}
+      {path:"appointments", component:AppointmentsComponent},
+      {path:"booking", component:RegistrationComponent}
     ])
   ],
   providers: [],
