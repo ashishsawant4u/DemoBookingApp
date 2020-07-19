@@ -15,7 +15,7 @@
     <div class="form-group">
       <label for="customerMob">Mobile Number</label>
       <input type="text" class="form-control" id="customerMob" name="custMobNo" [(ngModel)]="appointmentForm.custMobNo"
-        required #mobNumModel="ngModel" [class.field-error]="appointmentFormRef.submitted && mobNumModel.invalid">
+        required #mobNumModel="ngModel" [class.field-error]="appointmentFormRef.submitted && mobNumModel.invalid" (blur)="validateMobileNumber(mobNumModel)"/>
       <span class="text-danger" [hidden]="!appointmentFormRef.submitted || mobNumModel.valid">Please Enter Mobile Number</span>  
     </div>
     <div class="form-group">

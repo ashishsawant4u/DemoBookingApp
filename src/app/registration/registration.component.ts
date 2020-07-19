@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentData } from '../appointments/appointment.data';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -34,6 +34,11 @@ export class RegistrationComponent implements OnInit {
       console.log("productNumber >> "+appointmentForm.value.productNumber);
 
       console.log("Is Form valid "+appointmentForm.valid);
+  }
+
+  validateMobileNumber(mobileNumber : NgModel):void
+  {
+      console.log("Mobile Number "+mobileNumber.value);
   }
 
 
