@@ -1,4 +1,4 @@
-<form #appointmentFormRef="ngForm">
+<form #appointmentFormRef="ngForm" (ngSubmit)="saveAppointment(appointmentFormRef)">
     
     <div class="form-group row">
         <label for="appointmentNumber" class="col-sm-2 col-form-label font-weight-bold">Appointment Number</label>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentData } from '../appointments/appointment.data';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -22,5 +23,18 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  saveAppointment(appointmentForm : NgForm):void
+  { 
+      console.log("appointmentNumber >> "+appointmentForm.value.appointmentNumber);
+      console.log("customerName >> "+appointmentForm.value.customerName);
+      console.log("appointmentDate >> "+appointmentForm.value.appointmentDate);
+      console.log("address >> "+appointmentForm.value.address);
+      console.log("custMobNo >> "+appointmentForm.value.custMobNo);
+      console.log("productNumber >> "+appointmentForm.value.productNumber);
+
+      console.log("Is Form valid "+appointmentForm.valid);
+  }
+
 
 }
