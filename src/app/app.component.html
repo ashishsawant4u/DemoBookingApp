@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
   <a class="navbar-brand" href="#">DemoBookings</a>
@@ -15,7 +15,8 @@
         <a class="nav-link" [routerLink]="['/appointments']">Appointments</a>
       </li>
     </ul>
-    
+
+    <span *ngIf="hasLoggedInUser" class="pr-2">Welcome,{{loggedInUser}}</span>
     <button *ngIf="hasLoggedInUser" type="button" class="btn btn-secondary" (click)="logout();">Logout</button>
   </div>    
 </nav>

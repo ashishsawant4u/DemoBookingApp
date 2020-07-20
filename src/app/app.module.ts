@@ -9,7 +9,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentDetailsComponent } from './appointments/appointmentdetails.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { AppointmentsAccessGuard } from './appointments/appointments.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     FormsModule,
     RouterModule.forRoot([
       {path:"", component:HomepageComponent},
-      {path:"appointments", component:AppointmentsComponent},
+      {path:"appointments", component:AppointmentsComponent,canActivate:[AppointmentsAccessGuard]},
       {path:"booking", component:RegistrationComponent}
     ])
   ],

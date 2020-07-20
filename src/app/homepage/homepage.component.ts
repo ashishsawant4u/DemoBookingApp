@@ -18,11 +18,16 @@ export class HomepageComponent implements OnInit {
   };
 
   authFailed : boolean;
- 
+  hasLoggedInUser : boolean;
 
   constructor(public routerService : Router,private cookieService: CookieService,private appComponent: AppComponent) { }
 
   ngOnInit(): void {
+    let authCookie = this.cookieService.get('authusername');
+    if(authCookie)
+    {
+        this.hasLoggedInUser = true;
+    }
   }
 
   login(authForm : NgForm)
@@ -32,11 +37,11 @@ export class HomepageComponent implements OnInit {
         let username = authForm.value.username;
         let password = authForm.value.password;
 
-        if(password  === "12345678")
+        if(password  === "12")
         {
             this.authFailed = false;
-
             this.appComponent.hasLoggedInUser = true;
+            this.appComponent.loggedInUser = username;
 
             this.cookieService.set('authusername', username);  
             

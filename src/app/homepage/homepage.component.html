@@ -1,3 +1,5 @@
+<br>
+
 <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="authFailed">
     Authentication Failed
    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -5,7 +7,9 @@
    </button>
 </div>
 
-<form #authFormRef="ngForm" (ngSubmit)="login(authFormRef)">
+<div class="bg-warning p-2 font-weight-bold">Login</div>
+<div class="border border-warning p-5">
+<form #authFormRef="ngForm" (ngSubmit)="login(authFormRef)" *ngIf="!hasLoggedInUser">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" 
@@ -21,4 +25,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
 
+  
