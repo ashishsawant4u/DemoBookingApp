@@ -29,7 +29,15 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
+    <div *ngIf="hasLoggedInUser" >
+      <p class="welcome-txt">Welcome,</p>
+      <p class="user-txt">{{currentUserName}}</p>
+    </div>
+
   </div>
+  
+ 
   
 
   <div class="col-md-8">
@@ -40,12 +48,12 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <a href="/booking">
+          <a [routerLink]="['/booking']">
           <img class="d-block w-100" src="assets/carousal/carousal1.jpg" alt="First slide">
           </a>
         </div>
         <div class="carousel-item">
-          <a href="/booking">
+          <a [routerLink]="['/booking']">
           <img class="d-block w-100" src="assets/carousal/sales-demo-og.png" alt="Second slide">
           </a>
         </div>

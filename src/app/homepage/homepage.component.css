@@ -7,3 +7,16 @@
 .logindiv{
     height: 90%;
 }
+.welcome-txt
+{
+    font-family: cursive;
+    font-size: 25px;
+}
+.user-txt
+{
+    font-family: cursive;
+    font-size: 70px;
+    text-align: -webkit-center;
+    text-overflow: ellipsis; 
+    overflow: hidden;
+}

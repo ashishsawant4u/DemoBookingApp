@@ -19,6 +19,7 @@ export class HomepageComponent implements OnInit {
 
   authFailed : boolean;
   hasLoggedInUser : boolean;
+  currentUserName : string;
 
   constructor(public routerService : Router,private cookieService: CookieService,private appComponent: AppComponent) { }
 
@@ -27,6 +28,7 @@ export class HomepageComponent implements OnInit {
     if(authCookie)
     {
         this.hasLoggedInUser = true;
+        this.currentUserName = this.appComponent.loggedInUser;
     }
   }
 

@@ -25,6 +25,7 @@ import { AppointmentsAccessGuard } from './appointments/appointments.guard';
     FormsModule,
     RouterModule.forRoot([
       {path:"", component:HomepageComponent},
+      {path:"home", component:HomepageComponent},
       {path:"appointments", component:AppointmentsComponent,canActivate:[AppointmentsAccessGuard]},
       {path:"booking", component:RegistrationComponent}
     ])
