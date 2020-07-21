@@ -7,9 +7,9 @@
    </button>
 </div>
 
-<div class="bg-warning p-2 font-weight-bold">Login</div>
-<div class="border border-warning p-5">
-<form #authFormRef="ngForm" (ngSubmit)="login(authFormRef)" *ngIf="!hasLoggedInUser">
+<div class="bg-warning p-2 font-weight-bold" *ngIf="!hasLoggedInUser">Login</div>
+<div class="border border-warning p-5" *ngIf="!hasLoggedInUser">
+<form #authFormRef="ngForm" (ngSubmit)="login(authFormRef)">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" 
